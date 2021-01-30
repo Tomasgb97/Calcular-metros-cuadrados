@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Calcular metros cuadrados</title>
+    <style>
+        .div{
+            display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 200px;
+        margin: auto;
+        
+        }
+
+        .boton{
+            display: flex;
+        margin: auto;
+        margin-top: 40px;
+        }
+        .texto{
+            display: flex;
+        margin: auto;
+        margin-top: 30px;
+        background-color: #9e9e9ec2;
+        width: fit-content;
+        border-radius: 30px;
+        padding-left: 5px;
+        padding-right: 5px;
+        }
+        .ancho{
+            text-align: center;
+        }
+        #largo{
+            text-align: center;
+        }
+        .ancho:focus{
+            outline: none;
+        }
+        #largo:focus{
+            outline: none;
+        }
+        .divtexto{
+            display: flex;
+            align-items: center;
+        }
+        .body{
+
+
+        }
+        h1{
+            font-family: limelight;
+        }
+        .divfoto{
+            display: flex;
+            align-items: center;
+            height: fit-content;
+        }
+        .foto{
+            height: 500px;
+            margin: auto;
+        }
+        
+
+    </style>
+</head>
+<body class="body" style="background-image: url(file:///home/tomas/code/calculador%20metros%20cuadrados/fondo.jpg);">
+    <h1 class = h1 style="text-align: center;">Calcula los metros cuadrados de tu propiedad</h1>
+    <div class = divfoto>
+        <img class = foto src="file:///home/tomas/code/calculador%20metros%20cuadrados/imagenes/casa.png" alt="casa techo azul">
+    </div>
+    <div class = div>
+    <input class = ancho type="text" style="border-radius: 30px;">Ingrese el ancho</input>
+    <input id = largo type="text" style="border-radius: 30px;">Ingrese el largo</input>
+    </div>
+    <button class = boton  onclick="iniciar()">calcular!</button>
+    <div class = divtexto>
+    <p class = texto></p>
+    </div>
+    <script>
+        
+        function iniciar(){
+        const largo1 = document.querySelector('#largo').value;
+        const ancho1 = document.querySelector('.ancho').value;
+        const texto = document.querySelector('.texto');
+        
+
+        function metrocuadrado() {
+
+            if(isNaN(largo1)){
+                texto.textContent = 'Ambos valores deben ser numericos'
+            }
+            else if(isNaN(ancho1)){
+                texto.textContent = 'Ambos valores deben ser numericos'
+            } else { texto.textContent = 'Los metros cuadrados de tu propiedad son ' +
+            (ancho1 * largo1) + 
+            'm2.'};
+
+        } metrocuadrado();
+        }
+
+    </script>
+</body>
+</html>
